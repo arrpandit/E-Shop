@@ -6,24 +6,37 @@ import { dataType } from 'src/data-type';
 @Component({
   selector: 'app-seller-auth',
   templateUrl: './seller-auth.component.html',
-  styleUrls: ['./seller-auth.component.css']
+  styleUrls: ['./seller-auth.component.css'],
 })
 export class SellerAuthComponent implements OnInit {
-
-  constructor(private seller : SellersService,private router:Router) { }
+  constructor(private seller: SellersService, private router: Router) {}
 
   ngOnInit(): void {
-  }
-  signUp(data:dataType):void{
-    console.table(data)
-    this.seller.userSgnUp(data).subscribe((res)=>{
-      console.log("res---",res)
-      if(res){
-        this.router.navigate(['seller-home'])
-      }
-    })
-
-
+    this.seller.reloadSeller();
   }
 
+  showLogin = false
+  move: boolean = false;
+  signUp(data: dataType): void {
+    console.log('signUp data---', data);
+    // this.seller.userSgnUp(data).subscribe((res)=>{
+    //   console.log("res---",res)
+    //   if(res){
+    //     this.move=true
+    //     this.router.navigate(['seller-home'])
+    //   }
+    // })
+
+    this.seller.userSgnUp(data);
+  }
+  login(data: dataType): void {
+    console.log('login data---', data);
+    this.seller.userLogIN(data);
+  }
+  openLogin(){
+    this.showLogin=true
+  }
+  opensignup(){
+    this.showLogin=false
+  }
 }
