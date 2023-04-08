@@ -33,6 +33,14 @@ export class ProductsService {
     return this.http.delete(`http://localhost:3000/products/${id}`)
   }
 
+  getProductByID(id:any){
+    return this.http.get<products>(`http://localhost:3000/products/${id}`)
+  }
+
+  updateProduct(data:products){
+    return this.http.put(`http://localhost:3000/products/${data.id}`,data)
+  }
+
 
 
 

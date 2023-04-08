@@ -15,6 +15,11 @@ table td,table th{
     padding: 10px;
     
 }
+table td fa-icon{
+    text-align: center;
+    cursor: pointer;
+    margin-left: 10px;
+}
 
 img{
     width: 100px;

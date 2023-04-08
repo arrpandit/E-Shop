@@ -1,0 +1,61 @@
+<div class="seller-add-product">
+    <div class="sign-up">
+      <h1>Products Details</h1>
+      <h3>{{updatedmsg}}</h3>
+      <form
+        #productDetails="ngForm"
+        (ngSubmit)="productupdate(productDetails.value)"
+        class="common-form"
+      >
+        <input
+          class="form-input"
+          type="text"
+          ngModel="{{productData?.name}}"
+          placeholder="Products name"
+          name="name"
+        />
+        <input
+          class="form-input"
+          type="text"
+          ngModel="{{productData?.price}}"
+          placeholder="Products prize"
+          name="price"
+        />
+  
+        <input
+          type="text"
+          class="form-input"
+          placeholder="Product Category"
+          name="category"
+          ngModel="{{productData?.category}}"
+        />
+  
+        <input
+          type="text"
+          ngModel="{{productData?.code}}"
+          placeholder="Product code"
+          name="code"
+          class="form-input"
+        />
+  
+        <input
+          type="text"
+          ngModel="productData?.image"
+          placeholder="Product image url"
+          name="image"
+          class="form-input"
+        />
+  
+        <input
+          class="form-input"
+          type="text"
+          ngModel="{{productData?.description}}"
+          placeholder="Product Description"
+          name="description"
+        />
+        <button class="form-button">Add Products</button>
+        <!-- <h1 *ngIf="productAdded">{{addproductsmessage}}</h1>  //1 -->
+      </form>
+    </div>
+  </div>
+  
