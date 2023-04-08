@@ -5,6 +5,59 @@
       "email": "alok@gmail.com",
       "password": "abc@123",
       "id": 1
+    },
+    {
+      "name": "test1",
+      "email": "test1@gmail.com",
+      "password": "abc@123",
+      "id": 2
+    },
+    {
+      "name": "test2",
+      "email": "test2@gmail.com",
+      "password": "abc@123",
+      "id": 3
+    },
+    {
+      "name": "test3",
+      "email": "test3@gmail.com",
+      "password": "abc@123",
+      "id": 4
+    },
+    {
+      "name": "test4",
+      "email": "test4@gmail.com",
+      "password": "abc@123",
+      "id": 5
+    }
+  ],
+  "products": [
+    {
+      "name": "car ",
+      "price": "15000",
+      "category": "vehicles",
+      "code": "4578",
+      "image": "https://picsum.photos/200/300",
+      "description": "Good Car",
+      "id": 2
+    },
+    {
+      "name": "uytiugiuh`1`bi",
+      "price": "gblhkjio",
+      "category": "ybvljhlhuk",
+      "code": "km./lkm;oji",
+      "image": "bnnlihug",
+      "description": "HNMKJIKH",
+      "id": 3
+    },
+    {
+      "name": "uytiugiuh`1`bi",
+      "price": "gblhkjio",
+      "category": "ybvljhlhuk",
+      "code": "km./lkm;oji",
+      "image": "bnnlihug",
+      "description": "HNMKJIKH",
+      "id": 4
     }
   ]
 }

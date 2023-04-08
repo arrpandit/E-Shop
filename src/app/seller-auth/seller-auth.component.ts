@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SellersService } from '../services/sellers.service';
 import { Router } from '@angular/router';
-import { dataType } from 'src/data-type';
+import { login, signup } from 'src/data-type';
 
 @Component({
   selector: 'app-seller-auth',
@@ -10,15 +10,15 @@ import { dataType } from 'src/data-type';
 })
 export class SellerAuthComponent implements OnInit {
   constructor(private seller: SellersService, private router: Router) {}
-
+  authError:string=''
   ngOnInit(): void {
     this.seller.reloadSeller();
   }
 
   showLogin = false
   move: boolean = false;
-  signUp(data: dataType): void {
-    console.log('signUp data---', data);
+  signUp(data: signup): void {
+    // console.log('signUp data---', data);
     // this.seller.userSgnUp(data).subscribe((res)=>{
     //   console.log("res---",res)
     //   if(res){
@@ -29,9 +29,15 @@ export class SellerAuthComponent implements OnInit {
 
     this.seller.userSgnUp(data);
   }
-  login(data: dataType): void {
-    console.log('login data---', data);
+  login(data: login): void {
+    this.authError=''
+    // console.log('login data---', data);
     this.seller.userLogIN(data);
+    this.seller.isLoginError.subscribe((Error)=>{
+      if(Error){
+        this.authError="Credential incorrect"
+      }
+    })
   }
   openLogin(){
     this.showLogin=true

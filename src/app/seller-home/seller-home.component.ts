@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductsService } from '../services/products.service';
+import { products } from 'src/data-type';
 
 @Component({
   selector: 'app-seller-home',
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SellerHomeComponent implements OnInit {
 
-  constructor() { }
+  productList : undefined|products[]
+
+  constructor(private productservice:ProductsService) { }
 
   ngOnInit(): void {
+    this.list()
+  }
+  deleteProduct(id:number){
+    this.productservice.deleteProduct(id).subscribe((res)=>{
+      console.log("deleted----",res)
+      this.list()
+    })
+
+  }
+  list(){
+    this.productservice.productList().subscribe((res)=>{
+      console.table(res)
+      this.productList=res
+    })
   }
 
 }

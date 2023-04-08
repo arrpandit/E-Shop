@@ -36,8 +36,11 @@
 <!-- Login page -->
 
 <div class="seler-auth">
+    <!-- <p>{{authError}}</p> -->
   <div *ngIf="showLogin" class="login">
+    <p>{{authError}}</p>
     <h1>Seller log in page</h1>
+    
     <form
       #sellerlogin="ngForm"
       (ngSubmit)="login(sellerlogin.value)"
