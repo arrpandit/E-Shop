@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { products } from 'src/data-type';
 import { ProductsService } from '../services/products.service';
 
@@ -14,7 +14,8 @@ export class SellerUpdateProductComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private productservice: ProductsService
+    private productservice: ProductsService,
+    private router:Router
   ) {}
 
   ngOnInit(): void {
@@ -37,6 +38,7 @@ export class SellerUpdateProductComponent implements OnInit {
     });
     setTimeout(() => {
       this.updatedmsg=undefined
+      this.router.navigate(['seller-home'])
     }, 1000);
   }
 }

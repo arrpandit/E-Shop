@@ -42,12 +42,12 @@
       "id": 2
     },
     {
-      "name": "gbajb",
-      "price": "KSDAKSDHKAKWSHKASHDKA",
-      "category": "700000",
-      "code": "JKAAKDSH",
-      "image": "productData?.image",
-      "description": "ysagsa",
+      "name": "Vegitables",
+      "price": "500",
+      "category": "Food",
+      "code": "105",
+      "image": "https://picsum.photos/200/300",
+      "description": "Good for health",
       "id": 3
     }
   ]
