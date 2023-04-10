@@ -41,6 +41,19 @@ export class ProductsService {
     return this.http.put(`http://localhost:3000/products/${data.id}`,data)
   }
 
+  popularProducts(){
+    return this.http.get<products[]>('http://localhost:3000/products?_limit=3')
+  }
+
+  trendingProducts(){
+    return this.http.get<products[]>('http://localhost:3000/products?_limit=5')
+  }
+
+  searchProducts(query:string){
+    return this.http.get<products[]>(`http://localhost:3000/products?q=${query}`)
+  }
+
+
 
 
 

@@ -49,6 +49,33 @@
       "image": "https://picsum.photos/200/300",
       "description": "Good for health",
       "id": 3
+    },
+    {
+      "name": "Carrot",
+      "price": "50",
+      "category": "Food",
+      "code": "550",
+      "image": "https://picsum.photos/200/300",
+      "description": "Goofd for health",
+      "id": 4
+    },
+    {
+      "name": "Pattato",
+      "price": "50",
+      "category": "Food",
+      "code": "550",
+      "image": "https://picsum.photos/200/300",
+      "description": "Goofd for health",
+      "id": 5
+    },
+    {
+      "name": "Onion",
+      "price": "50",
+      "category": "Food",
+      "code": "550",
+      "image": "https://picsum.photos/200/300",
+      "description": "Goofd for health",
+      "id": 6
     }
   ]
 }
