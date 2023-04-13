@@ -18,3 +18,15 @@ export interface products{
     image:string,
     id:number
 }
+
+export interface userSigneup{
+    name:string,
+    age:Number,
+    email:string,
+    password:string
+}
+
+export interface userlogin{
+    email:string,
+    password:string
+}

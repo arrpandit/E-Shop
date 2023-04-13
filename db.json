@@ -17,54 +17,42 @@
       "email": "test2@gmail.com",
       "password": "abc@123",
       "id": 3
-    },
-    {
-      "name": "test3",
-      "email": "test3@gmail.com",
-      "password": "abc@123",
-      "id": 4
-    },
-    {
-      "name": "test4",
-      "email": "test4@gmail.com",
-      "password": "abc@123",
-      "id": 5
     }
   ],
   "products": [
     {
-      "name": "car ",
-      "price": "15000",
+      "name": "car1 ",
+      "price": "150000",
       "category": "vehicles",
-      "code": "4578",
-      "image": "https://picsum.photos/200/300",
+      "code": "105",
+      "image": "https://www.wheels97.com/tr:w-1200,dpr-1/images/car-color-images/renault/renault-duster/pearl_8ZVw3TgSQ.jpg",
       "description": "Good Car",
       "id": 2
     },
     {
-      "name": "Vegitables",
-      "price": "500",
-      "category": "Food",
+      "name": "car1",
+      "price": "100500",
+      "category": "vehicles",
       "code": "105",
-      "image": "https://picsum.photos/200/300",
+      "image": "https://imgd.aeplcdn.com/0x0/n/cw/ec/47028/duster-exterior-right-front-three-quarter-2.jpeg",
       "description": "Good for health",
       "id": 3
     },
     {
-      "name": "Carrot",
+      "name": "Mix Vegitables",
       "price": "50",
       "category": "Food",
       "code": "550",
-      "image": "https://picsum.photos/200/300",
+      "image": "https://www.healthyeating.org/images/default-source/home-0.0/nutrition-topics-2.0/general-nutrition-wellness/2-2-2-2foodgroups_vegetables_detailfeature.jpg?sfvrsn=226f1bc7_6",
       "description": "Goofd for health",
       "id": 4
     },
     {
-      "name": "Pattato",
+      "name": "Bhindi",
       "price": "50",
       "category": "Food",
       "code": "550",
-      "image": "https://picsum.photos/200/300",
+      "image": "https://images.indianexpress.com/2021/08/bhindi_1200_getty.jpg",
       "description": "Goofd for health",
       "id": 5
     },
@@ -73,9 +61,46 @@
       "price": "50",
       "category": "Food",
       "code": "550",
-      "image": "https://picsum.photos/200/300",
+      "image": "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=50,metadata=none,w=360/app/images/products/sliding_image/391306a.jpg?ts=1652789363",
       "description": "Goofd for health",
       "id": 6
+    }
+  ],
+  "user": [
+    {
+      "name": "Alok",
+      "age": "26",
+      "email": "alok@gmail.com",
+      "password": "abc@123",
+      "id": 1
+    },
+    {
+      "name": "ranjan",
+      "age": "35",
+      "email": "ranjan@gmail.com",
+      "password": "abc@123",
+      "id": 2
+    },
+    {
+      "name": "Pandit",
+      "age": "25",
+      "email": "pandit@gmail.com",
+      "password": "abc@123",
+      "id": 3
+    },
+    {
+      "name": "Alok1",
+      "age": "25",
+      "email": "alok1@gmail.com",
+      "password": "abc@123",
+      "id": 4
+    },
+    {
+      "name": "alok2",
+      "age": "25",
+      "email": "alok2@gmail.com",
+      "password": "abc@123",
+      "id": 5
     }
   ]
 }

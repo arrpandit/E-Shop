@@ -1,6 +1,7 @@
 <div class="user-Auth">
   <div *ngIf="!userloginSignupCondition" class="user-signup">
     <h1>User Sign up</h1>
+    <p *ngIf="usersignedupdisplay">{{usersigned}}</p>
     <form
       class="common-form"
       #user_signup_data="ngForm"
@@ -29,7 +30,7 @@
       />
       <input
         class="form-input"
-        type="text"
+        type="password"
         name="password"
         placeholder="enter password"
         ngModel
@@ -56,7 +57,7 @@
         class="form-input"
       />
       <input
-        type="text"
+        type="password"
         placeholder="Enter Password"
         name="password"
         class="form-input"

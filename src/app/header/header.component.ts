@@ -14,21 +14,38 @@ export class HeaderComponent implements OnInit {
   menuType:string='default'
   searchres:undefined|products[]
   sellername : string=''
+  username:string=''
   ngOnInit(): void {
     this.route.events.subscribe((val:any)=>{
       if(val.url){
         if(localStorage.getItem('seller') && val.url.includes('seller')){
-          console.log("inside seller")
           this.menuType='seller'
           let sellerstore= localStorage.getItem('seller')
           let sellerdata = sellerstore && JSON.parse(sellerstore)[0];
+          console.log("seller---",sellerdata)
           this.sellername = sellerdata.name
+        }else if(localStorage.getItem('user')){
+          let userstore = localStorage.getItem('user')
+          let userdata = userstore && JSON.parse(userstore)
+          if(userdata.name==undefined){
+            this.username=userdata[0].name
+          }else{
+            this.username= userdata.name
+          }
+          console.log("userstore---",this.username)
+          this.menuType='user'
         }else{
           console.log("outside seller")
           this.menuType='default'
         }
       }
     })
+  }
+
+  userlogout()
+  {
+    localStorage.clear()
+    this.route.navigate(['user-login'])
   }
 
   logout(){
