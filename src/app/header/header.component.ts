@@ -56,7 +56,7 @@ export class HeaderComponent implements OnInit {
     if(searchvalue){
       const element = searchvalue.target as HTMLInputElement
       this.producstservice.searchProducts(element.value).subscribe((res)=>{
-        // console.log("res---",res)
+        // console.log("serch---",res)
         this.searchres=res
 
       })
@@ -65,6 +65,11 @@ export class HeaderComponent implements OnInit {
   }
   hidesearchres(){
     this.searchres=undefined
+  }
+
+  submitsearch(val:string){
+    console.log("search value-----",val)
+    this.route.navigate([`search/${val}`])
   }
 
 }

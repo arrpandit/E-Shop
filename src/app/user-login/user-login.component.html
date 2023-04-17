@@ -8,34 +8,34 @@
       (ngSubmit)="userSignUp(user_signup_data.value)"
     >
       <input
-        class="form-input"
+        class="form-input" required #name="ngModel"
         type="text"
         placeholder="Enter your name"
         name="name"
         ngModel
       />
       <input
-        class="form-input"
+        class="form-input" required #age="ngModel"
         type="text"
         placeholder="Enter you age"
         name="age"
         ngModel
       />
       <input
-        class="form-input"
+        class="form-input" required #emailid="ngModel"
         type="text"
         placeholder="Enter email"
         name="email"
         ngModel
       />
       <input
-        class="form-input"
+        class="form-input" required #pass="ngModel"
         type="password"
         name="password"
         placeholder="enter password"
         ngModel
       />
-      <button class="form-button">Submit</button>
+      <button [disabled]="user_signup_data.invalid" class="form-button">Submit</button>
       <a class="auth-toggle-link" (click)="openuserlogin()">I have Account</a>
     </form>
   </div>
@@ -50,20 +50,26 @@
       (ngSubmit)="userlogin(user_login_data.value)"
     >
       <input
-        type="text"
+        type="text" required email
+        #emailid="ngModel"
         placeholder="Enter email"
         name="email"
         ngModel
         class="form-input"
       />
+      <!-- <br> -->
+      <span *ngIf="emailid.invalid && emailid.touched ">Enter valid Email id</span>
+      <!-- <br> -->
       <input
-        type="password"
+        type="password" required
+        #pass="ngModel"
         placeholder="Enter Password"
         name="password"
         class="form-input"
         ngModel
       />
-      <button class="form-button">LogIN</button>
+      <button [disabled]="user_login_data.invalid" class="form-button">LogIN</button>
+      <span *ngIf="invalidCredential">Please enter valid credential</span>
       <a class="auth-toggle-link" (click)="openusersignup()"
         >I don't have Account</a
       >

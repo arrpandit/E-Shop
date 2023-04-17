@@ -101,6 +101,13 @@
       "email": "alok2@gmail.com",
       "password": "abc@123",
       "id": 5
+    },
+    {
+      "name": "",
+      "age": "",
+      "email": "",
+      "password": "",
+      "id": 6
     }
   ]
 }

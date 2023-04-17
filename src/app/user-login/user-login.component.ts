@@ -12,6 +12,7 @@ export class UserLoginComponent implements OnInit {
   userloginSignupCondition=true
   usersigned: string | undefined
   usersignedupdisplay=false
+  invalidCredential = false;
   constructor(private userservice:UserServicesService , private router:Router) { }
 
   ngOnInit(): void {
@@ -22,6 +23,7 @@ export class UserLoginComponent implements OnInit {
 
   // }
   userSignUp(data:userSigneup){
+    console.log("user sign up---")
     this.userservice.userSignup(data).subscribe((res)=>{
       localStorage.setItem('user',JSON.stringify(res.body))
       this.router.navigate(['/'])
@@ -29,7 +31,19 @@ export class UserLoginComponent implements OnInit {
   }
   userlogin(data:userlogin){
     this.userservice.userlogin(data).subscribe((res)=>{
-      if(res)
+      let dat = JSON.stringify(res.body)
+      // console.log("res-data----",dat)
+      // console.log("res-----",dat.length)
+      
+      if(dat.length==2){
+        this.invalidCredential=true
+        this.router.navigate(['user-login'])
+
+        setTimeout(() => {
+          this.invalidCredential=false
+        }, 2000);
+      }
+      else
       {
         localStorage.setItem('user',JSON.stringify(res.body))
         this.router.navigate(['/'])
@@ -39,6 +53,7 @@ export class UserLoginComponent implements OnInit {
   }
 
   openusersignup(){
+    console.log("login---")
     this.userloginSignupCondition=false
   }
   openuserlogin(){
