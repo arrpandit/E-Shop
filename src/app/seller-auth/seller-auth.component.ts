@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SellerService } from '../services/seller.service';
 import { Router } from '@angular/router';
+import { login } from '../data-type';
 
 @Component({
   selector: 'app-seller-auth',
@@ -10,7 +11,8 @@ import { Router } from '@angular/router';
 export class SellerAuthComponent implements OnInit {
 
   constructor(private service:SellerService, private router:Router) { }
-
+  seller_toggle_flip=false;
+  loginErrorMsg:string=""
   ngOnInit(): void {
     this.service.sellerRelload();
   }
@@ -21,8 +23,46 @@ export class SellerAuthComponent implements OnInit {
     //   console.log(res)
     //   this.router.navigate(['seller-home'])
     // })
+    
+    if(data.name && data.password && data.email){
+      // console.log("aksdhuashdja")
+      this.service.userSignUp(data)
+    }else{
 
-    this.service.userSignUp(data)
+    }
+  }
+
+  login(data:login){
+    if(data.password && data.email){
+      // console.log("aksdhuashdja")
+      this.service.userLogin(data)
+    }
+    
+    // console.log("login data----",data)
+    this.loginErrorMsg = ""
+    this.service.isLoginError.subscribe((err)=>{     
+      if(err){
+        this.loginErrorMsg="Email or Password is invalid"
+      }else{
+        console.log("navigate---")
+        this.router.navigate(['seller-home'])
+      }
+    })
+
+  }
+
+  // seller_toggle_flip(){
+  //   console.log("dbsjbdjsbdjbdjabdjabdj")
+  // }
+
+  havingLogin(){
+    this.seller_toggle_flip=false;
+
+  }
+
+  nothavingLogin(){
+    this.seller_toggle_flip=true;
+
   }
 
 }

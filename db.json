@@ -11,12 +11,26 @@
       "password": "abc@123",
       "email": "ashish@123gmail.com",
       "id": 2
+    }
+  ],
+  "products": [
+    {
+      "name": "Noikia",
+      "price": "5000",
+      "color": "Black",
+      "category": "Electronic",
+      "description": "Good mobile",
+      "image": "https://s3b.cashify.in/gpro/uploads/2022/06/09161552/nokia-x2-02-front.jpg",
+      "id": 1
     },
     {
-      "name": "alok",
-      "password": "nadd",
-      "email": "asasn",
-      "id": 3
+      "name": "Noikia 11",
+      "price": "10000",
+      "color": "Black",
+      "category": "Electronic",
+      "description": "Good mobile",
+      "image": "https://s3b.cashify.in/gpro/uploads/2022/06/09161552/nokia-x2-02-front.jpg",
+      "id": 2
     }
   ]
 }

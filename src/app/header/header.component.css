@@ -3,10 +3,11 @@
     margin-top: 5px;
     justify-content: space-between
 }
-.nav h1{
+.nav h1,.nav h1 a{
     color: blueviolet;
     font-size: 40px;
     margin-left: 0;
+    text-decoration: none;
 }
 
 .nav ul{

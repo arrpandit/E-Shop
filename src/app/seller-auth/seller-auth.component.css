@@ -1,6 +1,19 @@
-.signUp h3{
+.signUp h3,.login h3{
     text-align: center;
     color: blueviolet;
     margin-top: 100px;
     margin-bottom: 20px;
+}
+
+.accountNav{
+    margin-top: 15px;
+    color: blueviolet;
+    font-size: 15px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.login p{
+    text-align: center;
+    color: rebeccapurple;
 }
