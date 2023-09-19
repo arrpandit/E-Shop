@@ -1,0 +1,26 @@
+.add-products h3,p{
+    text-align: center;
+    color: blueviolet;
+}
+
+/* table css */
+table{
+    text-align: center;
+    color: blueviolet;
+}
+
+table td,table th ,table button{
+    border: 1px solid blueviolet;
+    padding: 20px;
+}
+
+img{
+    height: 100px;
+    width: 100px;
+}
+
+.products-list h3{
+    text-align:left;
+    color: blueviolet;
+    margin-bottom: 10px;
+} 

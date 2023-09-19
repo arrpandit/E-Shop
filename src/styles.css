@@ -1,5 +1,6 @@
 body{
     font-family: sans-serif;
+    background-color: rgb(247, 250, 249);
 }
 
 .container{
@@ -29,4 +30,13 @@ body{
     height: 35px;
     border: 1px solid blueviolet;
     cursor: pointer;
+}
+
+.carousel-caption{
+    background-color: rgba(0, 0, 0, 0.404);
+    border: 5px;
+}
+.carousel-control-next-icon, .carousel-control-prev-icon{
+    background-color: black;
+    border: 5px;
 }

@@ -11,26 +11,41 @@
       "password": "abc@123",
       "email": "ashish@123gmail.com",
       "id": 2
+    },
+    {
+      "name": "Ayush",
+      "password": "abc@123",
+      "email": "ayush@gmail.com",
+      "id": 3
     }
   ],
   "products": [
     {
-      "name": "Noikia",
-      "price": "5000",
+      "name": "I Phone",
+      "price": "50000",
       "color": "Black",
-      "category": "Electronic",
+      "category": "Mobile",
       "description": "Good mobile",
-      "image": "https://s3b.cashify.in/gpro/uploads/2022/06/09161552/nokia-x2-02-front.jpg",
+      "image": "https://idestiny.in/wp-content/uploads/2022/09/iPhone_14_Pro_Deep_Purple_PDP_Image_Position-1a_Avail__en-IN.jpg",
       "id": 1
     },
     {
-      "name": "Noikia 11",
-      "price": "10000",
-      "color": "Black",
-      "category": "Electronic",
-      "description": "Good mobile",
-      "image": "https://s3b.cashify.in/gpro/uploads/2022/06/09161552/nokia-x2-02-front.jpg",
-      "id": 2
+      "name": "Watch f4",
+      "price": "1500",
+      "color": "Balck",
+      "category": "Watch",
+      "description": "Good Watch",
+      "image": "https://rukminim2.flixcart.com/image/850/1000/kxgfzbk0/smartwatch/k/n/y/-original-imag9wz384kvusv3.jpeg?q=90",
+      "id": 3
+    },
+    {
+      "name": "Bottol",
+      "price": "500",
+      "color": "White",
+      "category": "Bottol",
+      "description": "Good product",
+      "image": "https://atlasware.in/cdn/shop/products/Weblist_1200x.jpg?v=1646465160",
+      "id": 4
     }
   ]
 }

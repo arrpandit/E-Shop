@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductsService } from '../services/products.service';
+import { products } from '../data-type';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  popularProducts:undefined|products[]
+  constructor(private productservice:ProductsService) { }
+  allproducts:undefined|products[];
 
   ngOnInit(): void {
+    this.productservice.getpopulrProduct().subscribe((res)=>{
+      this.popularProducts = res
+    })
+    this.productservice.getProducts().subscribe((res)=>{
+      this.allproducts = res
+    })
   }
 
+  // images = [144, 1011, 984].map((n) => `https://picsum.photos/id/${n}/900/500`);
+
+  // getallproduct(){
+  //   this.productservice.getProducts().subscribe((res)=>{
+  //     this.allproducts = res
+  //     console.log("allproducts----",this.allproducts)
+  //   })
+  // }
 }
