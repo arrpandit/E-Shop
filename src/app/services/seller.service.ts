@@ -13,7 +13,7 @@ export class SellerService {
   isLoginError = new EventEmitter<boolean>(false);
   userSignUp(data: signUp) {
     // return this.http.post('http://localhost:3000/seller',data);
-    this.http.post("http://localhost:5000/seller", data, { observe: 'response' }).subscribe((res) => {
+    this.http.post("http://localhost:3000/seller", data, { observe: 'response' }).subscribe((res) => {
       console.log("sign up-----",res);
       this.isSellerLogedIn.next(true);
       localStorage.setItem('seller', JSON.stringify(res.body));

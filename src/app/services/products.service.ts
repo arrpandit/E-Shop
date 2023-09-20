@@ -12,12 +12,12 @@ export class ProductsService {
 
   //from backend
   addproducts(data:products){
-    return this.http.post('http://localhost:5000/products',data);
+    return this.http.post('http://localhost:3000/products',data);
   }
 
   //from backend
   getProducts(){
-    return this.http.get<products[]>('http://localhost:5000/products')
+    return this.http.get<products[]>('http://localhost:3000/products')
   }
 
   deleteProducts(id:string){
@@ -27,12 +27,12 @@ export class ProductsService {
   //will check with backend
   updateProduct(id:any,data:products){
     // return this.http.pu/t
-    return this.http.put<products>(`http://localhost:5000/products/${id}`,data);
+    return this.http.put<products>(`http://localhost:3000/products/${id}`,data);
   }
   getProductbyID(id:string){
     // return this.http.pu/t
-    return this.http.get(`http://localhost:5000/products/${id}`);
-    // return this.http.get(`http://localhost:5000/products/6509a4a7248536af89f4b597`);
+    return this.http.get(`http://localhost:3000/products/${id}`);
+    // return this.http.get(`http://localhost:3000/products/6309a4a7248336af89f4b397`);
   }
 
   getpopulrProduct(){
