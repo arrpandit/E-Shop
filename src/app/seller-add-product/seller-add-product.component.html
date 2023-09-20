@@ -1,60 +1,45 @@
-<div class="seller-add-product">
-  <div class="sign-up">
-    <h1>Products Details</h1>
-    <h4>{{addproductsmessage}}</h4> <!-- //2-->
-    <form
-      #productDetails="ngForm"
-      (ngSubmit)="productStore(productDetails.value)"
-      class="common-form"
-    >
-      <input
-        class="form-input"
-        type="text"
-        ngModel
-        placeholder="Products name"
-        name="name"
-      />
-      <input
-        class="form-input"
-        type="text"
-        ngModel
-        placeholder="Products prize"
-        name="price"
-      />
-
-      <input
-        type="text"
-        class="form-input"
-        placeholder="Product Category"
-        name="category"
-        ngModel
-      />
-
-      <input
-        type="text"
-        ngModel
-        placeholder="Product code"
-        name="code"
-        class="form-input"
-      />
-
-      <input
-        type="text"
-        ngModel
-        placeholder="Product image url"
-        name="image"
-        class="form-input"
-      />
-
-      <input
-        class="form-input"
-        type="text"
-        ngModel
-        placeholder="Product Description"
-        name="description"
-      />
-      <button class="form-button">Add Products</button>
-      <!-- <h1 *ngIf="productAdded">{{addproductsmessage}}</h1>  //1 -->
+<div>
+    <h1>Want to Add Product Automatically</h1>
+    <button (click)="automatically()">Automatically</button><br><br>
+<div class="add-products" *ngIf="productAddingWay==true">
+    <h3>Fill Products details</h3>
+    <p *ngIf="msgremove">Products added</p>
+    <form class="common-form" #inputProductDetails="ngForm" (ngSubmit)="addProducts(inputProductDetails.value)">
+        <input class="form-input" ngModel type="text" name="name" placeholder="Enter products name">
+        <input class="form-input" ngModel type="text" name="price" placeholder="Enter product price">
+        <input class="form-input" ngModel type="text" name="color" placeholder="Enter product color">
+        <input class="form-input" ngModel type="text" name="category" placeholder="Enter product category">
+        <textarea class="form-input" ngModel name="description" placeholder="Enter product description"></textarea>
+        <input class="form-input" ngModel type="text" name="image" placeholder="Enter image url">
+        <button class="form-button">Add</button>
     </form>
-  </div>
+</div>
+<div *ngIf="productAddingWay==false" class="products-list">
+    <button (click)="manually()">manuall</button><br><br>
+    <table>
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Color</th>
+                <th>category</th>
+                <th>Description</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of fakeproduct">
+                <td><img src="{{item.image}}"></td>
+                <td>{{item.title}}</td>
+                <td>{{item.price}}</td>
+                <td>{{item.color}}</td>
+                <td>{{item.category}}</td>
+                <td>{{item.description}}</td>
+                <td><button>Add</button></td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>
 </div>

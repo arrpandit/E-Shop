@@ -1,61 +1,46 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
-import { products } from 'src/data-type';
+import { HttpClient } from '@angular/common/http';
+import { products } from '../data-type';
+import { Router } from '@angular/router';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class ProductsService {
-  isProductAddes = new BehaviorSubject<boolean>(false);
 
-  constructor(private http: HttpClient) {}
+  constructor(private http:HttpClient,private router:Router) { }
 
-  // Products//
-  // addProduct(data: products) {  //1
-  //   this.http
-  //     .post('http://localhost:3000/products', data, { observe: 'response' })
-  //     .subscribe((res) => {
-  //       this.isProductAddes.next(true);
-  //       console.log('productes ass', res);
-  //     });
-  // }
-
-  addProduct(data: products) {  //2
-    return this.http.post('http://localhost:3000/products', data);
+  //from backend
+  addproducts(data:products){
+    return this.http.post('http://localhost:5000/products',data);
   }
 
-  productList(){
-    return this.http.get<products[]>('http://localhost:3000/products')
+  //from backend
+  getProducts(){
+    return this.http.get<products[]>('http://localhost:5000/products')
   }
 
-  deleteProduct(id:number){
-    return this.http.delete(`http://localhost:3000/products/${id}`)
+  deleteProducts(id:string){
+    return this.http.delete(`http://localhost:3000/products/${id}`);
   }
 
-  getProductByID(id:any){
-    return this.http.get<products>(`http://localhost:3000/products/${id}`)
+  //will check with backend
+  updateProduct(id:any,data:products){
+    // return this.http.pu/t
+    return this.http.put<products>(`http://localhost:5000/products/${id}`,data);
+  }
+  getProductbyID(id:string){
+    // return this.http.pu/t
+    return this.http.get(`http://localhost:5000/products/${id}`);
+    // return this.http.get(`http://localhost:5000/products/6509a4a7248536af89f4b597`);
   }
 
-  updateProduct(data:products){
-    return this.http.put(`http://localhost:3000/products/${data.id}`,data)
+  getpopulrProduct(){
+    return this.http.get<products[]>('http://localhost:3000/products?_limit=4')
   }
 
-  popularProducts(){
-    return this.http.get<products[]>('http://localhost:3000/products?_limit=3')
+  getAllFakeProductToAdd(){
+    return this.http.get<products[]>('https://fakestoreapi.com/products')    
   }
-
-  trendingProducts(){
-    return this.http.get<products[]>('http://localhost:3000/products?_limit=5')
-  }
-
-  searchProducts(query:string){
-    return this.http.get<products[]>(`http://localhost:3000/products?q=${query}`)
-  }
-
-
-
-
-
 
 }

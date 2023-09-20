@@ -1,20 +1,19 @@
-.sign-up  {
+.signUp h3,.login h3{
     text-align: center;
-    color: skyblue;
-    margin-top: 80px;
-    margin-bottom: 50px;
-    cursor: pointer;
+    color: blueviolet;
+    margin-top: 100px;
+    margin-bottom: 20px;
 }
-.login {
+
+.accountNav{
+    margin-top: 15px;
+    color: blueviolet;
+    font-size: 15px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.login p{
     text-align: center;
-    color: skyblue;
-    margin-top: 80px;
-    margin-bottom: 50px;
-    cursor: pointer;
-}
-.auth-toggle-link{
-    margin-top: 20px;
-    text-align: right;
-    font-size: 14px;
-    color: black;
+    color: rebeccapurple;
 }

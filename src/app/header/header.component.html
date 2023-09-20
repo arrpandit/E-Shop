@@ -1,41 +1,21 @@
 <nav class="nav">
-  <h1><a routerLink="/">E-SHOP</a></h1>
-  <div *ngIf="menuType == 'default'" class="nav-search">
-    <input
-    #searchinput  
-       
-      (keyup)="searchevent($event)"
-      type="text"
-      (blur)="hidesearchres()"
-      placeholder="search products"
-    />
-    <button (click)="submitsearch(searchinput.value)" >Search</button>
-    <ul class="suggested-list" *ngIf="searchres">
-      <li *ngFor="let item of searchres">
-        <a>{{ item.name }}</a>
-      </li>
-    </ul>
-  </div>
-  <div [ngSwitch]="menuType">
-    <ul *ngSwitchCase="'default'">
-      <li><a routerLink="/">Home</a></li>
-      <li><a routerLink="/seller-auth">Seller</a></li>
-      <li><a routerLink="/user-login">User Login</a></li>
-      <li><a href="#">Card(0)</a></li>
-    </ul>
-    <ul *ngSwitchCase="'user'">
-      <li><a routerLink="/">Home</a></li>
-      <li><a routerLink="/user-login">{{username | titlecase}}</a></li>
-      <li><a (click)="userlogout()">logout</a></li>
-      <li><a href="#">Card(0)</a></li>
-    </ul>
-    <ul *ngSwitchCase="'seller'">
-      <li><a routerLink="/seller-home">Product list</a></li>
-      <li><a routerLink="/seller-add-product">Add Product</a></li>
-      <li><a (click)="logout()">logout</a></li>
-      <li>
-        <a>{{ sellername | titlecase }}</a>
-      </li>
-    </ul>
-  </div>
+    <h1><a routerLink="/">E-Shop</a></h1>
+    <div *ngIf="menutype==='default'" class="nav-search">
+        <input type="text" placeholder="Search for products">
+        <button>Search</button>
+    </div>
+    <div [ngSwitch]="menutype">
+        <ul *ngSwitchCase="'seller'">
+            <li><a routerLink="/products"> Products</a></li>
+            <li><a routerLink="/add-products">Add Products</a></li>
+            <li><a (click)="logout()">Logout</a></li>
+            <li><a href="#">{{sellerName}}</a></li>
+        </ul>
+        <ul *ngSwitchCase="'default'">
+            <li><a routerLink="/">Home</a></li>
+            <li><a routerLink="/seller-auth">Seller</a></li>
+            <li><a href="#">Login</a></li>
+            <li><a href="#">Cart(0)</a></li>
+        </ul>
+    </div>
 </nav>
