@@ -21,9 +21,9 @@
                 <td>{{item.color}}</td>
                 <td>{{item.category}}</td>
                 <td>{{item.description}}</td>
-                <td><button (click)="deleteproducts(item._id)">Delete</button></td> 
+                <td><button (click)="deleteproducts(item.id)">Delete</button></td> 
                 <!--implement delete icon by font-awesome-->
-                <td><button routerLink="/seller-update-products/{{item._id}}">Edit</button></td>
+                <td><button routerLink="/seller-update-products/{{item.id}}">Edit</button></td>
             </tr>
         </tbody>
     </table>

@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class ProductsService {
 
-  constructor(private http:HttpClient,private router:Router) { }
+  constructor(private http:HttpClient) { }
 
   //from backend
   addproducts(data:products){
@@ -40,7 +40,7 @@ export class ProductsService {
   }
 
   getAllFakeProductToAdd(){
-    return this.http.get<products[]>('https://fakestoreapi.com/products')    
+    return this.http.get<products[]>('http://localhost:3000/newProducts')    
   }
 
 }

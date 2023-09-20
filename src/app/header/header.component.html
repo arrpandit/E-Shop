@@ -6,16 +6,21 @@
     </div>
     <div [ngSwitch]="menutype">
         <ul *ngSwitchCase="'seller'">
-            <li><a routerLink="/products"> Products</a></li>
-            <li><a routerLink="/add-products">Add Products</a></li>
-            <li><a (click)="logout()">Logout</a></li>
-            <li><a href="#">{{sellerName}}</a></li>
+            <li *ngIf="sellerLogined"><a routerLink="/">Home</a></li>
+            <li *ngIf="sellerLogined"><a routerLink="/products"> Products</a></li>
+            <li *ngIf="sellerLogined"><a routerLink="/add-products">Add Products</a></li>
+            <li *ngIf="sellerLogined"><a href="#">{{sellerName}}</a></li> <!--after login need to display -->
+            <li *ngIf="sellerLogined"><a (click)="logout()">Logout</a></li> <!--after login need to display -->
+        </ul>
+        <ul *ngSwitchCase="'user'">
+            <li *ngIf="userLogined"><a routerLink="/">Home</a></li>
+            <li><a routerLink="/"> Cart(0)</a></li>
+            <li *ngIf="userLogined"><a href="#">{{userName}}</a></li>   <!-- after login need to display -->
+            <li *ngIf="userLogined"><a (click)="logout()">Logout</a></li>  <!-- after login need to display -->
         </ul>
         <ul *ngSwitchCase="'default'">
-            <li><a routerLink="/">Home</a></li>
             <li><a routerLink="/seller-auth">Seller</a></li>
-            <li><a href="#">Login</a></li>
-            <li><a href="#">Cart(0)</a></li>
+            <li><a routerLink="/user-login">User</a></li>
         </ul>
     </div>
 </nav>

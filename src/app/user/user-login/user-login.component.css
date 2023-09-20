@@ -1,0 +1,26 @@
+.seller-auth h3{
+    text-align: center;
+    color: blueviolet;
+    padding-top: 30px;
+}
+
+.login p{
+    text-align: center;
+    color: blueviolet;
+}
+
+.signUp h3{
+    text-align: center;
+    color: blueviolet;
+    padding-top: 30px;
+}
+
+.login h3{
+    text-align: center;
+    color: blueviolet;
+    padding-top: 30px;
+}
+
+.accountNav{
+    margin-top: 10px;
+}

@@ -34,7 +34,6 @@ export class SellerAuthComponent implements OnInit {
 
   login(data:login){
     if(data.password && data.email){
-      // console.log("aksdhuashdja")
       this.service.userLogin(data)
     }
     
@@ -45,7 +44,6 @@ export class SellerAuthComponent implements OnInit {
         this.loginErrorMsg="Email or Password is invalid"
       }else{
         console.log("navigate---")
-        this.router.navigate(['seller-home'])
       }
     })
 

@@ -1,0 +1,26 @@
+<div class="user-auth">
+    <div *ngIf="user_toggle_flip" class="signUp">
+        <h3>User Sign Up</h3>
+        <form #sellerSignUp="ngForm" (ngSubmit)="signUp(sellerSignUp.value)" class="common-form">
+            <input class="form-input" ngModel name="name" type="text" placeholder="Enter name">
+            <input class="form-input" ngModel name="password" type="password" placeholder="Enter password">
+            <input class="form-input" ngModel name="email" type="text" placeholder="Enter email">
+            <button class="form-button">SignUp</button>
+            <a class="accountNav" (click)="havingLogin()">Already having account ? Login </a>
+        </form>
+    </div>
+
+    <!-- Login page -->
+
+    <div *ngIf="!user_toggle_flip" class="login">
+        <h3>User Login</h3>
+        <p>{{errorInLogin}}</p>
+        <form #sellerlogin="ngForm" (ngSubmit)="login(sellerlogin.value)" class="common-form">
+            <input class="form-input" ngModel name="email" type="text" placeholder="Enter email">
+            <input class="form-input" ngModel name="password" type="password" placeholder="Enter password">
+            <button class="form-button">login</button>
+            <a class="accountNav" (click)="nothavingLogin()">Have't User Account ? SignUp </a>
+        </form>
+    </div>
+
+</div>

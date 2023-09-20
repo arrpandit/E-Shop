@@ -17,6 +17,7 @@ export class SellerAddProductComponent implements OnInit {
   ngOnInit(): void {
     this.productsService.getAllFakeProductToAdd().subscribe((res)=>{
       this.fakeproduct = res;
+      console.log("fake products--------",this.fakeproduct)
     })
   }
 
@@ -52,7 +53,15 @@ export class SellerAddProductComponent implements OnInit {
     this.productAddingWay = false;
   }
 
-  formSubmit(data:products){
+  
+
+  addproduct(item:any){
+    this.productsService.addproducts(item).subscribe((res)=>{
+      if(res){
+        console.log("products---added---");
+        
+      }
+    })
 
   }
 

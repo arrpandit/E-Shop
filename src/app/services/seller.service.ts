@@ -24,7 +24,7 @@ export class SellerService {
   sellerRelload() {
     if (localStorage.getItem('seller')) {
       this.isSellerLogedIn.next(true);
-      this.router.navigate(['seller-home'])
+      this.router.navigate(['products'])
     }
   }
 
@@ -33,7 +33,7 @@ export class SellerService {
     this.http.get(`http://localhost:3000/seller?email=${data.email}&${data.password}`,{observe:'response'}).subscribe((res:any)=>{
       if(res.body && res && res.body.length){
         localStorage.setItem('seller',JSON.stringify(res.body));
-        this.router.navigate(['seller-home'])
+        this.router.navigate(['products'])
       }else{
         this.isLoginError.emit(true)
       }
