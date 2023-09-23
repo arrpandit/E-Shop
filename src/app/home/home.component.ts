@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
   allproducts:undefined|products[];
 
   ngOnInit(): void {
-    this.productservice.getpopulrProduct().subscribe((res)=>{
+    this.productservice.getProducts().subscribe((res)=>{
       this.popularProducts = res
     })
     this.productservice.getProducts().subscribe((res)=>{
