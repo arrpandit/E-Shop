@@ -19,6 +19,6 @@ export interface products{
     image:string,
     title:string,
     rating:object
-    id:string
+    _id:string
 
 }

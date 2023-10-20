@@ -1,8 +1,9 @@
-<div class="home-container">
+<div>
+<div *ngIf="!showsingleproductdetails" class="home-container">
     <ngb-carousel *ngIf="popularProducts">
         <ng-template *ngFor="let item of popularProducts" ngbSlide>
             <div class="picsum-img-wrapper">
-                <img class="product-header-image" src="{{item.image}}" alt="Random first slide" />
+                <img (click)="fordetails(item._id)" class="product-header-image" src="{{item.image}}" alt="Random first slide" />
             </div>
             <div class="carousel-caption">
                 <h2>{{item.name}}</h2>
@@ -15,8 +16,8 @@
         <p>Product List</p>
         <div class="row">
             <div class="col-sm-3" *ngFor="let item of allproducts">
-                <div class="product-item">
-                    <img src="{{item.image}}" alt="">
+                <!-- <div class="product-item"> -->
+                    <button (click)="fordetails(item._id)" class="product-item"><img src="{{item.image}}" alt="">
                     <div class="product-details">
                         <div class="product-head">
                             <h6>{{item.name}}</h6>
@@ -27,13 +28,21 @@
                         <div class="product-color">
                             <h6>color : black</h6>
                         </div>
-                    </div>
+                    </div></button>
                     <div class="product-footer">
-                        <a routerLink="product-details/{{item.id}}">View Details</a>
+                        <a (click)="fordetails(item._id)">View Details</a>
                         <a href="">Add cart</a>
                     </div>
-                </div>
+                <!-- </div> -->
             </div>
         </div>
     </div>
+</div>
+<div *ngIf="showsingleproductdetails" class="single_product_details">
+   <div class="col-sm-3" *ngFor="let item of singleproductdetails">
+    <p>{{item?.name}}</p>
+    
+   </div>
+
+</div>
 </div>

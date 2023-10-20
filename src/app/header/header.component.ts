@@ -17,7 +17,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     //indetifying the URL
     this.route.events.subscribe((val:any)=>{
-      // console.log("url---------",val.url)
+      // console.log("userLogined---------",this.userLogined)
       if(val.url){
         if(localStorage.getItem('seller') || val.url.includes('seller')){
           this.menutype="seller"
@@ -31,8 +31,8 @@ export class HeaderComponent implements OnInit {
           this.menutype = "user"
           let localdata = localStorage.getItem("user")
           if(localdata){
-            // console.log("url---------",val.url)
             let bodydata = localdata && JSON.parse(localdata)            
+            // console.log("url   bodydata---------",bodydata)
             if(bodydata.name){
               this.userName = bodydata.name
             }

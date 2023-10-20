@@ -17,9 +17,13 @@ export class UserLoginComponent implements OnInit {
   }
 
   login(userloginData:any){
-    if(userloginData.name && userloginData.password) {
+    
+    // console.log("userloginData-------",userloginData);
+    if(userloginData.email && userloginData.password) {
     this.userService.getuser(userloginData).subscribe((res:any)=>{ 
-      if(res.body && res && res.body.length){
+      console.log("res-------",res.body);
+      
+      if(res.body && res){
         localStorage.setItem("user",JSON.stringify(res.body));
         this.router.navigate(['/'])     
       }else{

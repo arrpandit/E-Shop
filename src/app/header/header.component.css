@@ -9,6 +9,9 @@
     margin-left: 0;
     text-decoration: none;
 }
+.nav a:hover{
+    background-color: rgb(140, 168, 143);
+}
 
 .nav ul{
     display: flex;
