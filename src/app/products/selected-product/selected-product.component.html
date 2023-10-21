@@ -1,1 +1,31 @@
+<div class="single_product_details">
+        <div class="col-sm-3" *ngFor="let item of data">
+            <div class="sigle_product">
+                <div>
+                    <button class="single_product-item"><img src="{{item.image}}" alt="">
+                        <div class="product-details">
+                            <div class="product-head">
+                                <h6>{{item.name}}</h6>
+                            </div>
+                            <div class="product-price">
+                                <h6>Price : {{item.price}}</h6>
+                            </div>
+                            <div class="product-color">
+                                <h6>color : {{item}}</h6>
+                            </div>
+                            <div class="product-footer">
+                                <!-- <button class="form-button" (click)="productAddto_cart(item._id)">Add cart</button> -->
+                            </div>
+                        </div>
+                    </button>
+                </div>
+                <div class="description" >
+                    <p>{{item.description}}</p>
+                    <!-- <button class="form-button" (click)="productAddto_cart(item._id)">Add to cart</button> -->
+                 </div>
+                
+            </div>
 
+        <!-- </div> -->
+
+    </div>
