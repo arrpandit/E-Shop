@@ -1,48 +1,79 @@
 <div>
-<div *ngIf="!showsingleproductdetails" class="home-container">
-    <ngb-carousel *ngIf="popularProducts">
-        <ng-template *ngFor="let item of popularProducts" ngbSlide>
-            <div class="picsum-img-wrapper">
-                <img (click)="fordetails(item._id)" class="product-header-image" src="{{item.image}}" alt="Random first slide" />
-            </div>
-            <div class="carousel-caption">
-                <h2>{{item.name}}</h2>
-                <h3>Price : {{item.price}}</h3>
-                <p>{{item.description}}</p>
-            </div>
-        </ng-template>
-    </ngb-carousel>
-    <div class="product-wrapper">
-        <p>Product List</p>
-        <div class="row">
-            <div class="col-sm-3" *ngFor="let item of allproducts">
-                <!-- <div class="product-item"> -->
-                    <button (click)="fordetails(item._id)" class="product-item"><img src="{{item.image}}" alt="">
-                    <div class="product-details">
-                        <div class="product-head">
-                            <h6>{{item.name}}</h6>
+    <div *ngIf="!showsingleproductdetails" class="home-container">
+        <ngb-carousel *ngIf="popularProducts">
+            <ng-template *ngFor="let item of popularProducts" ngbSlide>
+                <div class="picsum-img-wrapper">
+                    <img (click)="fordetails(item._id)" class="product-header-image" src="{{item.image}}"
+                        alt="Random first slide" />
+                </div>
+                <div class="carousel-caption">
+                    <h2>{{item.name}}</h2>
+                    <h3>Price : {{item.price}}</h3>
+                    <p>{{item.description}}</p>
+                </div>
+            </ng-template>
+        </ngb-carousel>
+        <div class="product-wrapper">
+            <p>Product List</p>
+            <div class="row">
+                <div class="col-sm-3" *ngFor="let item of allproducts">
+                    <!-- <div class="product-item"> -->
+                    <!-- <button (click)="fordetails(item._id)" class="product-item"><img src="{{item.image}}" alt=""> -->
+                        <button routerLink="select_product_by_user/{{item._id}}" class="product-item"><img src="{{item.image}}" alt="">
+                        <div class="product-details">
+                            <div class="product-head">
+                                <h6>{{item.name}}</h6>
+                            </div>
+                            <div class="product-price">
+                                <h6>Price : {{item.price}}</h6>
+                            </div>
+                            <div class="product-color">
+                                <h6>color : {{item.color}}</h6>
+                            </div>
                         </div>
-                        <div class="product-price">
-                            <h6>Price : 80000</h6>
-                        </div>
-                        <div class="product-color">
-                            <h6>color : black</h6>
-                        </div>
-                    </div></button>
+                    </button>
                     <div class="product-footer">
-                        <a (click)="fordetails(item._id)">View Details</a>
-                        <a href="">Add cart</a>
+                        <!-- <a (click)="fordetails(item._id)">View Details</a> -->
+                        <button routerLink="select_product_by_user/{{item._id}}">View Details</button>
+                        <!-- <a href="">Add cart</a> -->
+                        <button class="form-button" (click)="productAddto_cart(item._id)">Add cart</button>
                     </div>
-                <!-- </div> -->
+                    <!-- </div> -->
+                </div>
             </div>
         </div>
     </div>
-</div>
-<div *ngIf="showsingleproductdetails" class="single_product_details">
-   <div class="col-sm-3" *ngFor="let item of singleproductdetails">
-    <p>{{item?.name}}</p>
-    
-   </div>
+    <!-- <div *ngIf="showsingleproductdetails" class="single_product_details">
+        <div class="col-sm-3" *ngFor="let item of singleproductdetails">
+            <div class="sigle_product">
+                <div>
+                    <button class="single_product-item"><img src="{{item.image}}" alt="">
+                        <div class="product-details">
+                            <div class="product-head">
+                                <h6>{{item.name}}</h6>
+                            </div>
+                            <div class="product-price">
+                                <h6>Price : {{item.price}}</h6>
+                            </div>
+                            <div class="product-color">
+                                <h6>color : {{item.color}}</h6>
+                            </div>
+                            <div class="product-footer">
+                                <button class="form-button" (click)="productAddto_cart(item._id)">Add cart</button>
+                            </div>
+                        </div>
+                    </button>
+                </div>
+                <div class="description" >
+                    <p>{{item.description}}</p>
+                    <!-- <button class="form-button" (click)="productAddto_cart(item._id)">Add to cart</button> -->
+                <!-- </div>
+                
+            </div>
 
+        </div>
+
+    </div> --> -->
 </div>
-</div>
+
+<!-- <app-header [item]="totalProduct_usercart"></app-header> -->

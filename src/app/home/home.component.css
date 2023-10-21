@@ -54,3 +54,19 @@
   transform: translateY(4px);
 }
 
+.sigle_product{
+    display: flex;
+    justify-content: space-between;
+}
+
+.single_product-item img{
+    width: 250px;
+    height: 200px;
+}
+
+.description{
+    margin-left: 40px;
+    margin-top: 50px;
+    /* padding: 20px; */
+    object-fit: contain;
+}

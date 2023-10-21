@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { SellerService } from '../services/seller.service';
+import { SellerService } from '../../services/seller/seller.service';
 import { Router } from '@angular/router';
-import { login } from '../data-type';
+import { login } from '../../data-type';
 
 @Component({
   selector: 'app-seller-auth',

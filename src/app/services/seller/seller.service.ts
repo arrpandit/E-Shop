@@ -3,7 +3,7 @@ import { HttpClient, JsonpInterceptor } from '@angular/common/http'
 import { Router } from '@angular/router';
 
 import { BehaviorSubject } from 'rxjs'
-import { login, signUp } from '../data-type';
+import { login, signUp } from '../../data-type';
 @Injectable({
   providedIn: 'root'
 })

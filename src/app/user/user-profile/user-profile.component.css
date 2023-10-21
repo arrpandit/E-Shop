@@ -1,0 +1,21 @@
+.name_photo{
+    display: flex;
+    justify-content:space-between;
+    margin-top: 20px;
+}
+
+.user_image{
+    width: 100px;
+    height: 100px;
+    background-color: aquamarine;
+}
+
+.btn_update{
+    margin-top: 70px;
+}
+
+.products{
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-around;
+}

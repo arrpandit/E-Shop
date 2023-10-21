@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductsService } from '../services/products.service';
+import { ProductsService } from '../services/product/products.service';
 import { products } from '../data-type';
 import { Router } from '@angular/router';
 
@@ -14,7 +14,9 @@ export class HomeComponent implements OnInit {
   constructor(private productservice:ProductsService,private route:Router) { }
   allproducts:undefined|products[];
   showsingleproductdetails = false;
-  singleproductdetails:undefined|products[];
+  singleproductdetails:undefined|products[]=[];
+  user_selected_productdetails:products[]= [];
+  totalProduct_usercart = 0;
 
   ngOnInit(): void {
     this.productservice.getProducts().subscribe((res)=>{
@@ -25,15 +27,34 @@ export class HomeComponent implements OnInit {
     })
   }
 
+  //product add to cart
+
+  productAddto_cart(id:any){
+    this.allproducts?.map((res:any)=>{
+      if(res._id== id){
+        this.user_selected_productdetails.push(res)
+      }
+    })
+    
+    console.log("user added ----------" ,this.user_selected_productdetails)    
+    this.totalProduct_usercart++;
+  }
+
   fordetails(id:any){
+    this.allproducts?.map((res:any)=>{
+      if(res._id== id){
+        // this.user_selected_productdetails.push(res)
+        this.singleproductdetails?.push(res);
+      }
+    })
     // this.route.
     // console.log("id----------",id)
     this.showsingleproductdetails = true
-    this.productservice.getProductbyID(id).subscribe((res:any )=>{
-      this.singleproductdetails = res;
-      // this.singleproductdetails = Object.entries(res);
-      console.log("indivuisal------",this.singleproductdetails);      
-    })
+    // this.productservice.getProductbyID(id).subscribe((res:any )=>{
+    //   this.singleproductdetails = res;
+    //   // this.singleproductdetails = Object.entries(res);
+    //   console.log("indivuisal------",this.singleproductdetails);      
+    // })
 
     
   }

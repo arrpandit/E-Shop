@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { products } from '../data-type';
-import { ProductsService } from '../services/products.service';
+import { products } from '../../data-type';
+import { ProductsService } from '../../services/product/products.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -24,6 +24,7 @@ export class SellerProductListComponent implements OnInit {
 
   //after deleting refresh not working ?
   deleteproducts(id:string){
+    console.log("deleted with id----",id)
     this.productService.deleteProducts(id).subscribe((res)=>{
       this.list();
     })    

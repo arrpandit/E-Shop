@@ -1,6 +1,7 @@
 <nav class="nav">
     <h1><a routerLink="/">E-Shop</a></h1>
-    <div *ngIf="menutype==='default'" class="nav-search">
+    <!-- <div *ngIf="menutype==='default'" class="nav-search"> -->
+    <div class="nav-search">
         <input type="text" placeholder="Search for products">
         <button>Search</button>
     </div>
@@ -15,12 +16,12 @@
         <ul *ngSwitchCase="'user'">
             <li *ngIf="userLogined"><a routerLink="/">Home</a></li>
             <li><a routerLink="/"> Cart(0)</a></li>
-            <li *ngIf="userLogined"><a href="#">{{userName}}</a></li>   <!-- after login need to display -->
-            <li *ngIf="userLogined"><a (click)="logout()">Logout</a></li>  <!-- after login need to display -->
+            <li *ngIf="userLogined"><a href="/user_details">{{userName}}</a></li> <!-- after login need to display -->
+            <li *ngIf="userLogined"><a (click)="logout()">Logout</a></li> <!-- after login need to display -->
         </ul>
         <ul *ngSwitchCase="'default'">
-            <li><a routerLink="/seller-auth">Seller</a></li>
             <li><a routerLink="/user-login">User</a></li>
+            <li><a routerLink="/seller-auth">Seller</a></li>
         </ul>
     </div>
 </nav>
