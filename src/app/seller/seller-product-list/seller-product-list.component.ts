@@ -24,8 +24,8 @@ export class SellerProductListComponent implements OnInit {
 
   //after deleting refresh not working ?
   deleteproducts(id:string){
-    console.log("deleted with id----",id)
     this.productService.deleteProducts(id).subscribe((res)=>{
+      // this.router.navigate(['products'])
       this.list();
     })    
   }

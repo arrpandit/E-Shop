@@ -18,6 +18,7 @@ import { EachProductDetailsComponent } from './products/each-product-details/eac
 import { ToUppercasePipe } from './pipe/to-uppercase.pipe';
 import { UserProfileComponent } from './user/user-profile/user-profile.component';
 import { SelectedProductComponent } from './products/selected-product/selected-product.component';
+import { SearchProductsComponent } from './products/search-products/search-products.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { SelectedProductComponent } from './products/selected-product/selected-p
     ToUppercasePipe,
     UserProfileComponent,
     SelectedProductComponent,
+    SearchProductsComponent,
   ],
   imports: [
     BrowserModule,

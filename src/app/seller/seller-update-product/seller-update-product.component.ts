@@ -10,10 +10,12 @@ import { products } from '../../data-type';
 })
 export class SellerUpdateProductComponent implements OnInit {
   productData:undefined|any
+  edit_productId:undefined|any;
   constructor(private route:ActivatedRoute,private productService:ProductsService,private router:Router) { }
 
   ngOnInit(): void {
     let productid = this.route.snapshot.paramMap.get('id');
+    this.edit_productId = productid
     productid && this.productService.getProductbyID(productid).subscribe((res)=>{
       //impliment try catch ,what id=f anyone try to access out of the page means id=70 which is available
       this.productData = res      
@@ -22,10 +24,12 @@ export class SellerUpdateProductComponent implements OnInit {
 
 
   //will check the error (API not calling properlly)
-  productId:undefined|number;
+  
   updateProducts(data:any){
-    this.productId = this.productData?.id;
-    this.productService.updateProduct(this.productId,data).subscribe((res)=>{
+    // this.productId = this.productData?.id;
+    console.log("id-------------",data);
+    
+    this.productService.updateProduct(this.edit_productId,data).subscribe((res)=>{
       this.router.navigate(['products'])
     })
 

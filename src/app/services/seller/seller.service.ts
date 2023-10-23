@@ -12,7 +12,7 @@ export class SellerService {
   isSellerLogedIn = new BehaviorSubject<boolean>(false)
   isLoginError = new EventEmitter<boolean>(false);
   userSignUp(val: any) {
-    this.http.post("https://e-shop-by-alok.cyclic.cloud/seller/signup", val, { observe: 'response' }).subscribe((res:any) => {
+    this.http.post("http://localhost:5000/seller/signup", val, { observe: 'response' }).subscribe((res:any) => {
       if(res.body && res.body.status=="Success")
       this.isSellerLogedIn.next(true);
       localStorage.setItem('seller', JSON.stringify(res.body.data.name));
@@ -39,7 +39,7 @@ export class SellerService {
     //   }
     // })
 
-    this.http.post(`https://e-shop-by-alok.cyclic.cloud/seller/login`, data, { observe: 'response' }).subscribe((res: any) => {
+    this.http.post(`http://localhost:5000/seller/login`, data, { observe: 'response' }).subscribe((res: any) => {
       if (res.body.data && res.body.status == "Success") {
         localStorage.setItem('seller', JSON.stringify(res.body.data[0].name));
         this.router.navigate(['products'])

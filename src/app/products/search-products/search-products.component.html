@@ -1,0 +1,29 @@
+<div class="product-wrapper">
+    <p>Product List</p>
+    <div class="row">
+        <div class="col-sm-3" *ngFor="let item of searchResult">
+            <!-- <div class="product-item"> -->
+            <!-- <button (click)="fordetails(item._id)" class="product-item"><img src="{{item.image}}" alt=""> -->
+                <!-- <button routerLink="select_product_by_user/{{item._id}}" class="product-item"><img src="{{item.image}}" alt=""> -->
+                <div class="product-details">
+                    <div class="product-head">
+                        <h6>{{item.name}}</h6>
+                    </div>
+                    <div class="product-price">
+                        <h6>Price : {{item.price}}</h6>
+                    </div>
+                    <div class="product-color">
+                        <!-- <h6>color : {{item.color}}</h6> -->
+                    </div>
+                </div>
+            <!-- </button> -->
+            <div class="product-footer">
+                <!-- <a (click)="fordetails(item._id)">View Details</a> -->
+                <!-- <button routerLink="select_product_by_user/{{item._id}}">View Details</button> -->
+                <!-- <a href="">Add cart</a> -->
+                <!-- <button class="form-button" (click)="productAddto_cart(item._id)">Add cart</button> -->
+            </div>
+            <!-- </div> -->
+        </div>
+    </div>
+</div>

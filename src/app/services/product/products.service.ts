@@ -12,26 +12,26 @@ export class ProductsService {
   
   //from backend
   addproducts(data:products){
-    return this.http.post('https://e-shop-by-alok.cyclic.cloud/products',data);
+    return this.http.post('http://localhost:5000/products',data);
   }
 
   //from backend
   getProducts(){
-    return this.http.get<products[]>('https://e-shop-by-alok.cyclic.cloud/products')
+    return this.http.get<products[]>('http://localhost:5000/products')
   }
 
   deleteProducts(id:string){
-    return this.http.delete(`https://e-shop-by-alok.cyclic.cloud/products/${id}`);
+    return this.http.delete(`http://localhost:5000/products/${id}`);
   }
 
   //will check with backend
   updateProduct(id:any,data:products){
     // return this.http.pu/t
-    return this.http.put<products>(`https://e-shop-by-alok.cyclic.cloud/products/${id}`,data);
+    return this.http.put<products>(`http://localhost:5000/products/${id}`,data);
   }
   getProductbyID(id:string){
     // return this.http.pu/t
-    return this.http.get(`https://e-shop-by-alok.cyclic.cloud/products/${id}`);
+    return this.http.get(`http://localhost:5000/products/${id}`);
     // return this.http.get(`http://localhost:3000/products/6309a4a7248336af89f4b397`);
   }
 
@@ -40,7 +40,10 @@ export class ProductsService {
   }
 
   getAllFakeProductToAdd(){
-    return this.http.get<products[]>('https://e-shop-by-alok.cyclic.cloud/products')    
+    return this.http.get<products[]>('http://localhost:5000/products')    
+  }
+  searchProduct(query:string){
+    return this.http.get<products[]>(`http://localhost:5000/products/search/${query}`) 
   }
 
 }

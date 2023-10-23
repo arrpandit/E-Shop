@@ -34,9 +34,10 @@
                     </button>
                     <div class="product-footer">
                         <!-- <a (click)="fordetails(item._id)">View Details</a> -->
-                        <button routerLink="select_product_by_user/{{item._id}}">View Details</button>
+                        <!-- <button routerLink="select_product_by_user/{{item._id}}">View Details</button> -->
                         <!-- <a href="">Add cart</a> -->
-                        <button class="form-button" (click)="productAddto_cart(item._id)">Add cart</button>
+                        <button (click)="productAddto_cart(item._id)">Add cart</button>
+                        <button (click)="BuyProduct(item._id)">Buy</button>
                     </div>
                     <!-- </div> -->
                 </div>

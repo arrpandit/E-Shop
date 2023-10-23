@@ -18,7 +18,7 @@ export class SellerAuthComponent implements OnInit {
   }
 
   signUp(data:any){
-    console.log("sign up data",data);
+    // console.log("sign up data",data);
     // this.service.userSignUp(data).subscribe((res)=>{
     //   console.log(res)
     //   this.router.navigate(['seller-home'])

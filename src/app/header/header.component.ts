@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ProductsService } from '../services/product/products.service';
+import { products } from 'src/data-type';
 
 @Component({
   selector: 'app-header',
@@ -7,12 +9,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
+  SearchResult : undefined|products[]
   sellerName:string="";
   userLogined:boolean = false;
   sellerLogined:boolean = false;
   userName:string = ""
-  constructor(private route:Router) { }
+  constructor(private route:Router,private productService : ProductsService) { }
   menutype:string="default"
   ngOnInit(): void {
     //indetifying the URL
@@ -61,6 +63,34 @@ export class HeaderComponent implements OnInit {
     }
     this.menutype = "default"
     this.route.navigate(['/'])
+  }
+
+  //if we not path any query then backend crassed ?
+  SearchProduct(query:KeyboardEvent){
+    if(query){
+      const element = query.target as HTMLInputElement
+      console.log("query----",element.value);
+      // 
+      this.productService.searchProduct(element.value).subscribe((res:any)=>{   
+        console.log("response------------",res)
+        if(res.Status == "Success"){
+          console.log("success-----------------",res.status);
+          
+          res.length = 5
+          this.SearchResult = res.Data       
+        }else{
+          console.log("failed-----------------",res.status);
+        } 
+      })      
+    }
+    // console.log("search result ------------",this.SearchResult);
+  }
+  hideResult(){
+    this.SearchResult = undefined
+  }
+
+  seachProduct(query:string){
+    this.route.navigate([`search/:${query}`])
   }
 
 }

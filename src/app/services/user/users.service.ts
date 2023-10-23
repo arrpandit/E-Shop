@@ -9,11 +9,11 @@ export class UsersService {
   constructor(private http : HttpClient) { }
 
   adduser(data:any){
-    return this.http.post("https://e-shop-by-alok.cyclic.cloud/users/signup",data,{ observe: 'response' });
+    return this.http.post("http://localhost:5000/users/signup",data,{ observe: 'response' });
   }
 
   getuser(data:any){ 
-    return this.http.post(`https://e-shop-by-alok.cyclic.cloud/users/login`,data, {observe:'response'})
+    return this.http.post(`http://localhost:5000/users/login`,data, {observe:'response'})
   }
   
 }

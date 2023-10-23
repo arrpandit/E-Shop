@@ -12,6 +12,7 @@ import { HeaderComponent } from './header/header.component';
 import { EachProductDetailsComponent } from './products/each-product-details/each-product-details.component';
 import { UserProfileComponent } from './user/user-profile/user-profile.component';
 import { SelectedProductComponent } from './products/selected-product/selected-product.component';
+import { SearchProductsComponent } from './products/search-products/search-products.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path:"seller-auth",
     component:SellerAuthComponent
+  },
+  {
+    path:"search/:query",
+    component:SearchProductsComponent
   },
   //seller
   {

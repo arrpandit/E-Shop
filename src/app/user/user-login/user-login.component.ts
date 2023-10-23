@@ -21,7 +21,7 @@ export class UserLoginComponent implements OnInit {
     // console.log("userloginData-------",userloginData);
     if(userloginData.email && userloginData.password) {
     this.userService.getuser(userloginData).subscribe((res:any)=>{ 
-      console.log("res-------",res.body);
+      
       
       if(res.body && res){
         localStorage.setItem("user",JSON.stringify(res.body));
@@ -32,6 +32,7 @@ export class UserLoginComponent implements OnInit {
     })}else{
       this.errorInLogin = "User or password is invalid"
     }
+    console.log("res-------",this.errorInLogin);
   }
 
   signUp(signupdata:any){

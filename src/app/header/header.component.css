@@ -56,3 +56,23 @@
     background-color: violet;
     margin-top: 10px;
 }
+
+.seggested_result{
+    position: absolute;
+    display: list-item !important;
+    z-index: 10;
+    /* background-color: aliceblue; */
+    width: 300px;
+    top: 50px;
+    /* border: 1px solid #fff; */
+}
+
+.seggested_result li{
+    padding: 5px;
+    /* border: 1px solid #fff; */
+}
+
+.seggested_result li a{
+    cursor: pointer;
+    /* color: aqua; */
+}
